@@ -8,7 +8,7 @@ const TempComponent = (props) => {
     useEffect(() => {
         props.placeholderAction1()
         props.placeholderAction2()
-    })
+    },[])
     
     return ( 
         <div>
