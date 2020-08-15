@@ -1,6 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+import { ExampleContext } from './ContextComponent'
 
-const TempForm = (props) => {
+const TempForm = () => {
+    const { exampleState, setExampleState } = useContext(ExampleContext)
+
     const initValues = {
         name: "",
         description: "",
@@ -17,7 +20,10 @@ const TempForm = (props) => {
     }
     const handleSubmit = evt => {
         evt.preventDefault()
-        //push to context state
+        setExampleState({
+            ...exampleState,
+            examples: [...exampleState.examples, formState]
+        })
         setFormState(initValues)
     }
 

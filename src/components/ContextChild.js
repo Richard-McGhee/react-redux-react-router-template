@@ -1,9 +1,18 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { ExampleContext } from './ContextComponent'
 
-const ContextChild = (props) => {
+const ContextChild = () => {
+    const { exampleState } = useContext(ExampleContext)
     return ( 
-        // This child will take the context state and map over it or I'll just use the first index like I did with the other examples. Likely I'll map it so I can test it with multiple submissions.
-        <h1>Placeholder</h1>
+        <div>
+            {exampleState.examples.map(item => (
+                <div key={item.id}>
+                    <h1>{item.name}</h1>
+                    <h3>{item.description}</h3>
+                    <p>Arbitrary number --{">"} {item.number}</p>
+                </div>
+            ))}
+        </div>
      );
 }
  
