@@ -1,11 +1,15 @@
 import React from 'react'
 import TempComponent from './components/TempComponent'
-import './App.css'
+import ContextComponent from './components/ContextComponent'
+import { Route, Link } from 'react-router-dom'
 
 function App() {
   return (
     <div>
-      <TempComponent />
+      <Link to="/formExample">Form Example</Link>
+      <Link to="/componentExample">Component Example</Link>
+      <Route path="/formExample" component={ContextComponent} />
+      <Route path="/componentExample" component={TempComponent} />
     </div>
   );
 }
