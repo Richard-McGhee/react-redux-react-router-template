@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
 import uuid from 'react-uuid'
 import DynamicRoutingPostSnippet from './DynamicRoutingPostSnippet'
-import DynamicRoutingPost from './DynamicRotuingPost'
-import { Link, Route, Switch } from 'react-router-dom'
-import App from '../App'
+import { Link } from 'react-router-dom'
 
 const DynamicRoutingExample = (props) => {
     const initValues = {
@@ -12,22 +10,7 @@ const DynamicRoutingExample = (props) => {
         number: 0
     }
     const [formValues, setFormValues] = useState(initValues)
-    const [DRState, setDRState] = useState({
-        tempArr: [
-            {
-                name: "First Example",
-                description: "First Example Description",
-                number: 1,
-                id: uuid()
-            },
-            {
-                name: "Second Example",
-                description: "Second Example Description",
-                number: 2,
-                id: uuid()
-            }
-        ]
-    })
+    const { DRState, setDRState } = props
 
     const handleChange = evt => {
         setFormValues({
@@ -50,7 +33,6 @@ const DynamicRoutingExample = (props) => {
     return ( 
         <div>
             <Link to="/">Home</Link>
-            <Route exact path="/" component={App} />
             <form onSubmit={handleSubmit}>
                 <label htmlFor="nameInput">
                     <input type="text"
@@ -82,12 +64,8 @@ const DynamicRoutingExample = (props) => {
                 <Link to={`/dynamicRoutingExample/routedTo/${item.id}`} key={item.id} >
                     <DynamicRoutingPostSnippet item={item} />
                 </Link>
-            ))}
-            <Switch>
-                <Route path="/dynamicRoutingExample/routedTo/:id">
-                    {DRState.tempArr.length > 0 && <DynamicRoutingPost items={DRState.tempArr}/>}
-                </Route>
-            </Switch>
+            ))}                
+            
         </div>
     );
 }

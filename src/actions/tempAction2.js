@@ -4,6 +4,6 @@
 // 3. action types - variables to manage action type strings to avoid hard-to-find bugs
 
 export const PLACEHOLDER_ACTION2 = "PLACEHOLDER_ACTION2"
-export const placeholderAction2 = () => {
-    return { type: PLACEHOLDER_ACTION2, payload: 'placeholder2'}
+export const placeholderAction2 = (newText) => {
+    return { type: PLACEHOLDER_ACTION2, payload: newText }
 }
