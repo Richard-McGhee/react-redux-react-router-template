@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 
 const DynamicRoutingPost = (props) => {
     const { id } = useParams()
@@ -16,6 +16,8 @@ const DynamicRoutingPost = (props) => {
     }
     return ( 
         <div>
+            <Link to="/">Home</Link>
+
             <h1>Here is the correct name: {post.name}</h1>
             <h2>Here is the correct description: {post.description}</h2>
             <p>Here is the correct arbitrary number --{">"} {post.number}</p>

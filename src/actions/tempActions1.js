@@ -5,5 +5,5 @@
 
 export const PLACEHOLDER_ACTION1 = "PLACEHOLDER_ACTION1"
 export const placeholderAction1 = () => {
-    return { type: PLACEHOLDER_ACTION1, payload: 'placeholder1'}
+    return { type: PLACEHOLDER_ACTION1, payload: 'Placeholder1'}
 }

@@ -1,8 +1,7 @@
 import React, { useState, createContext } from 'react'
 import ContextChild from './ContextChild'
-import TempForm from './TempForm'
-import { Route, Link } from 'react-router-dom'
-import App from '../App'
+import TempForm from '../reduxExamples/TempForm'
+import { Link } from 'react-router-dom'
 
 export const ExampleContext = createContext()
 
@@ -23,7 +22,6 @@ const ContextComponent = () => {
         <div>
             <ExampleContext.Provider value={{exampleState, setExampleState}}>
                 <Link to="/">Home</Link>
-                <Route exact path="/" component={App} />
                 <TempForm />
                 {exampleState.examples.length > 0 && <ContextChild />}
             </ExampleContext.Provider>  
