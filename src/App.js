@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import TempComponent from './components/reduxExamples/TempComponent'
+import ReduxComponent from './components/reduxExamples/ReduxComponent'
 import ContextComponent from './components/contextAPIExamples/ContextComponent'
 import DynamicRoutingExample from './components/dynamicRoutingExamples/DynamicRoutingExample'
 import DynamicRoutingPost from './components/dynamicRoutingExamples/DynamicRotuingPost'
@@ -27,13 +27,15 @@ function App() {
 })
   return (
     <div>
-      <Link to="/formExample">Form Example</Link>
-      <Link to="/componentExample">Component Example</Link>
-      <Link to="/dynamicRoutingExample">Dynamic Routing Example</Link>
+      <nav>
+        <Link to="/componentExample" className="nav-links">Redux Component Example</Link>
+        <Link to="/formExample" className="nav-links">Context Form Example</Link>
+        <Link to="/dynamicRoutingExample" className="nav-links">Dynamic Routing Example</Link>
+      </nav>
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route path="/formExample" component={ContextComponent} />
-        <Route path="/componentExample" component={TempComponent} />
+        <Route path="/componentExample" component={ReduxComponent} />
         <Route exact path="/dynamicRoutingExample"><DynamicRoutingExample DRState={DRState} setDRState={setDRState}/></Route>
         <Route path="/dynamicRoutingExample/routedTo/:id">
           <DynamicRoutingPost items={DRState.tempArr}/>
