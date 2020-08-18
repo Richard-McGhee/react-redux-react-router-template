@@ -19,7 +19,7 @@ const ReduxComponent = (props) => {
             {props.tempArr1.length > 0 ? <h1>{props.tempArr1[0].tempText}</h1> : <h1>Problems1</h1>}
             {props.tempArr2.length > 0 ? <h1>{props.tempArr2[0].tempText}</h1> : <h1>Problems2</h1>}
 
-            {props.error && <h1>{props.error}</h1>}
+            {props.error && <h1>{props.error}{console.log(props.error)}</h1>}
             {props.tempArr1.length > 1 && <h1>User Name from API call: {props.tempArr1[1].first_name} - {props.tempArr1[1].last_name}</h1>}
             <h3>An Example of thunk usage.</h3>
         </div>
