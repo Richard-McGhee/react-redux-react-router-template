@@ -1,6 +1,6 @@
 import React, { useState, createContext } from 'react'
 import ContextChild from './ContextChild'
-import TempForm from '../reduxExamples/TempForm'
+import TempForm from './ContextForm'
 import { Link } from 'react-router-dom'
 
 export const ExampleContext = createContext()

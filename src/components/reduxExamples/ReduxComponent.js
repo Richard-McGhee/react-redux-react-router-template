@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { placeholderAction1 } from '../../actions/tempActions1'
 import { placeholderAction2 } from '../../actions/tempAction2'
 
-const TempComponent = (props) => {
+const ReduxComponent = (props) => {
 
     useEffect(() => {
         props.placeholderAction1()
@@ -27,4 +27,4 @@ const mapProps = (state) => {
         tempArr2: state.tempReducer2.tempArr
     }
 }
-export default connect(mapProps, { placeholderAction1, placeholderAction2 })(TempComponent);
+export default connect(mapProps, { placeholderAction1, placeholderAction2 })(ReduxComponent);

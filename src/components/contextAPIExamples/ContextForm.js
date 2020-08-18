@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react'
-import { ExampleContext } from '../contextAPIExamples/ContextComponent'
+import { ExampleContext } from './ContextComponent'
 
 const TempForm = () => {
     const { exampleState, setExampleState } = useContext(ExampleContext)
